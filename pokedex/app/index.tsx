@@ -74,7 +74,7 @@ console.log(e)
   return (
     <ScrollView contentContainerStyle={{padding: 16 , gap: 16}}>
       {pokemons.map((pokemon) => (
-        <Link key={pokemon.name} href={"/details"} style={{ // @ts-ignore 
+        <Link key={pokemon.name} href={{ pathname: "/details/[name]", params: { name: pokemon.name } }} style={{ // @ts-ignore 
            backgroundColor: colorsByType[pokemon.types[0].type.name] + 30, padding: 20, borderRadius: 20 , textAlign:"center"}}>
         <View>
           <Text style={styles.name}>{pokemon.name}</Text>
